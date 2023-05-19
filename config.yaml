@@ -1,0 +1,18 @@
+db:
+  HOST: host
+  PORT: 5432
+  USER: postgres
+  PASSWORD: password
+  DBNAME: base
+  SSLMODE: disable
+
+path: /rep
+log_file: L:/rep/log2.out
+include_regexp:
+  - .*.go$
+  - .*.env$
+exclude_regexp:
+  - .*.out$
+commands:
+  - go build -o app L:/rep/main.go
+  - L:/console-app/app
